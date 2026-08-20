@@ -1,0 +1,260 @@
+#:import Factory kivy.factory.Factory
+
+<Exitpop@Popup>:
+    auto_dismiss: False
+    size_hint: 0.4, 0.3
+    title: 'Exit'
+    title_align: 'center'
+    BoxLayout:
+        orientation: 'vertical'
+        padding: 10
+        spacing: 10
+        Label:
+            text: "[b]Do you really want to quit?[/b]"
+            markup: True
+        BoxLayout:
+            padding: 10
+            spacing: 10
+            size_hint: (1, 0.6)
+            Button:
+                text: 'Yes'
+                on_release: app.stop_app()
+                on_release: root.dismiss()
+            Button:
+                text: 'No'
+                on_release: root.dismiss()
+
+<Aryamanpop@Popup>:
+    auto_dismiss: False
+    size_hint: 0.7, 0.7
+    pos_hint: {"x": 0.15, "y": 0.15}
+    title: "Filter"
+    BoxLayout:
+        orientation: "vertical"
+        BoxLayout:
+            orientation: "horizontal"
+            Label:
+                size_hint: 0.4, 1
+                text: "[b]Do You have a preferred cuisine[/b]"
+                markup: True
+            Spinner:
+                id: cuisine_rec
+                size_hint: 0.5, 0.2
+                pos_hint: {"left": 1, "top": 0.6}
+                text: "None"
+                values: ["Indian","Chinese","Greek","Spanish","Japanese","Thai","Italian","American","Vegan","Mexican","French","Seafood","Middle Eastern","British","German"]
+                font_size: '18sp'
+        BoxLayout:
+            orientation: "horizontal"
+            Label:
+                size_hint: 0.4, 1
+                text: "[b]Difficulty Level[/b]"
+                markup: True
+            Spinner:
+                id: Diff_lev
+                size_hint: 0.5, 0.2
+                pos_hint: {"left": 1, "top": 0.6}
+                text: "None"
+                values: ["Easy","Medium","Hard"]
+                font_size: '18sp'
+        BoxLayout:
+            orientation: "horizontal"
+            Label:
+                size_hint: 0.4, 1
+                text: "[b]Nutritional Value[/b]"
+                markup: True
+            Spinner:
+                id: nutr_val
+                size_hint: 0.5, 0.2
+                pos_hint: {"left": 1, "top": 0.6}
+                text: "None"
+                values: ["Low","Medium","High"]
+                font_size: '18sp'
+        BoxLayout:
+            size_hint: 1, 0.2
+            Button:
+                text: 'Continue'
+                on_release: app.find_cuis(cuisine_rec.text, Diff_lev.text, nutr_val.text)
+                on_release: root.dismiss()
+
+<Adilpop@Popup>:
+    auto_dismiss: False
+    size_hint: 0.7, 0.7
+    pos_hint: {"x": 0.15, "y": 0.15}
+    title: "Filter"
+    BoxLayout:
+        orientation: "vertical"
+        BoxLayout:
+            orientation: "horizontal"
+            Label:
+                size_hint: 0.4, 1
+                text: "[b]Do You have a preferred cuisine[/b]"
+                markup: True
+            Spinner:
+                id: cuisine_res
+                size_hint: 0.5, 0.2
+                pos_hint: {"left": 1, "top": 0.6}
+                text: "None"
+                values: ['Spanish Cuisine','Italian Cuisine','Japanese Cuisine','American Cuisine','Indian Cuisine','Vegan Cuisine','Mexican Cuisine','Chinese Cuisine','International Cuisine','Asian Fusion','Vietnamese Cuisine','Greek Cuisine','Middle Eastern Cuisine','French Cuisine','Seafood','British Cuisine','Korean Cuisine']
+                font_size: '18sp'
+        BoxLayout:
+            orientation: "horizontal"
+            Label:
+                size_hint: 0.4, 1
+                text: "[b]Do You have a price range[/b]"
+                markup: True
+            Spinner:
+                id: price_range
+                size_hint: 0.5, 0.2
+                pos_hint: {"left": 1, "top": 0.6}
+                text: "None"
+                font_size: '18sp'
+        BoxLayout:
+            orientation: "horizontal"
+            Label:
+                size_hint: 0.4, 1
+                text: "[b]Do You have a Ambience[/b]"
+                markup: True
+            Spinner:
+                id: ambience
+                size_hint: 0.5, 0.2
+                pos_hint: {"left": 1, "top": 0.6}
+                text: "None"
+                font_size: '18sp'
+        BoxLayout:
+            size_hint: 1, 0.2
+            Button:
+                text: 'Continue'
+                on_release: app.find_res(cuisine_res.text, price_range.text, ambience.text)
+                on_release: root.dismiss()
+
+<Intro>:
+    BoxLayout:
+        orientation: "vertical"
+        canvas.before:
+            Rectangle:
+                source: 'testing123.jpg'
+                pos: self.pos
+                size: self.size
+        Label:
+            text: "Welcome to Chef Adil"
+            font_size: '50sp'
+        Widget:
+            size_hint_y: None
+            height: 150
+        Button:
+            text: "Click here"
+            size_hint: None, None
+            size: 200, 50
+            pos_hint: {'center_x': 0.5}
+            on_press: root.manager.current = "ChefAdil2"
+            on_press: app.start_connection()
+        Button:
+            text: "X"
+            size_hint: None, None
+            size: 100, 50
+            pos_hint: {'right': 1, 'top': 1}
+            on_press: Factory.Exitpop().open()
+
+<Modes>:
+    BoxLayout:
+        orientation: "vertical"
+        canvas.before:
+            Rectangle:
+                source: 'testing123.jpg'
+                pos: self.pos
+                size: self.size
+        Label:
+            text: "Choose"
+            size_hint: 1, 0.9
+            font_size: '100sp'
+        BoxLayout:
+            orientation: 'horizontal'
+            size_hint: 1, 0.2
+            Button:
+                text: "Discover your recipe"
+                size_hint: 0.5, 1
+                on_press: Factory.Aryamanpop().open()
+                on_press: root.manager.current = "ChefAdil3"
+            Button:
+                text: "Discover Restaurants"
+                size_hint: 0.5, 1
+                on_press: Factory.Adilpop().open()
+                on_press: root.manager.current = "ChefAdil4"
+        Button:
+            text: "X"
+            size_hint: None, None
+            size: 100, 50
+            pos_hint: {'right': 1, 'top': 1}
+            on_press: Factory.Exitpop().open()
+        Button:
+            text: "Meet the creators"
+            size_hint: 0.2, 0.08
+            pos_hint: {"left": 1, "top": 1}
+            on_press: root.manager.current = "Creators"
+
+<Recipies>:
+    BoxLayout:
+        orientation: "vertical"
+        canvas.before:
+            Rectangle:
+                source: 'testing123.jpg'
+                pos: self.pos
+                size: self.size
+        Label:
+            text: "Aryaman"
+            size_hint: 1, 0.9
+            font_size: '100sp'
+        Button:
+            text: "X"
+            size_hint: None, None
+            size: 100, 50
+            pos_hint: {'right': 1, 'top': 1}
+            on_press: Factory.Exitpop().open()
+
+<Create>:
+    BoxLayout:
+        orientation: "vertical"
+        canvas.before:
+            Rectangle:
+                source: 'testing123.jpg'
+                pos: self.pos
+                size: self.size
+        BoxLayout:
+            orientation: "vertical"
+            spacing: 0.25
+            canvas.before:
+                Color:
+                    rgba: 1, 1, 1, 1
+                Rectangle:
+                    source: 'creators.jpg'
+                    size: min(self.width - 100, (self.height - 100) * (16/9)), min(self.height - 100, (self.width - 100) / (16/9))
+                    pos: self.center_x - (min(self.width - 100, (self.height - 100) * (16/9)) / 2), self.center_y - (min(self.height - 100, (self.width - 100) / (16/9)) / 2)
+        Button:
+            text: "X"
+            size_hint: None, None
+            size: 100, 50
+            pos_hint: {'right': 1, 'top': 1}
+            on_press: Factory.Exitpop().open()
+        Button:
+            text: "Go Back"
+            size_hint: None, None
+            size: 175, 50
+            pos_hint: {'left': 1, "top": 1}
+            on_press: root.manager.current = "ChefAdil1"
+
+<final_screen>:
+    BoxLayout:
+        orientation: "vertical"
+        canvas.before:
+            Rectangle:
+                source: 'testing123.jpg'
+                pos: self.pos
+                size: self.size
+
+        Button:
+            text: "X"
+            size_hint: None, None
+            size: 100, 50
+            pos_hint: {'right': 1, 'top': 1}
+            on_press: Factory.Exitpop().open()
