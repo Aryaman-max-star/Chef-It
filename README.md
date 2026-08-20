@@ -1,17 +1,17 @@
-**Chef-It**
+**CHEF-IT**
 
 Chef-It is a desktop application designed to help users discover new recipes and restaurants based on their personal preferences. The application was built using Python, Kivy, and MySQL, combining a graphical user interface with a relational database to create a complete end to end food discovery experience.
 
 Overview:
-The idea behind Chef-It is simple: it can be difficult to decide what to cook or where to eat, especially when you have specific preferences. Chef-It allows users to filter recipes and restaurants based on the factors that matter most to them and then returns relevant results from a locally stored database.
+The idea behind Chef-It is simple: Chef-It allows users to filter recipes and restaurants based on the factors that matter most to them and then returns relevant results from a locally stored database. It is difficult to make decisions regarding dinning due to varies and a plethora of preferences and Chef-It helps simplify this process.
 The application contains two main discovery modes: Recipe Discovery and Restaurant Discovery.
 
-Recipe Discovery:
-The recipe section allows users to search through a database of 180+ dishes using filters such as cuisine, difficulty level, and nutritional value.
-Once a suitable recipe is found, the application displays the relevant information, including the complete ingredient list and step by step cooking instructions. This allows users to go from discovering a recipe to actually preparing it without needing to search for additional information elsewhere.
+1. Recipe Discovery:
+The recipe section allows users to search through a database of 180+ dishes, with more added every month, using filters such as cuisine, difficulty level, and nutritional value.
+Once a suitable recipe is found, the application displays the relevant information, including the complete ingredient list and step by step cooking instructions allowing users to go from discovering a recipe to actually preparing it seamlessly.
 
-Restaurant Discovery:
-The restaurant section works in a similar way, allowing users to discover restaurants from a database of 180+ entries.
+2. Restaurant Discovery:
+The restaurant section works in a similar way, allowing users to discover restaurants from a database of 200+ entries.
 Users can filter restaurants based on cuisine, price range, and ambience. The results provide useful information such as the restaurant's specialty cuisine, rating, and location, helping users narrow down their options based on what they are looking for.
 
 Search System:
