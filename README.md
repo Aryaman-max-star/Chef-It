@@ -1,4 +1,5 @@
-Chef-It:
+**Chef-It**
+
 Chef-It is a desktop application designed to help users discover new recipes and restaurants based on their personal preferences. The application was built using Python, Kivy, and MySQL, combining a graphical user interface with a relational database to create a complete end to end food discovery experience.
 
 Overview:
