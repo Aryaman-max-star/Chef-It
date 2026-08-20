@@ -1,64 +1,120 @@
 **CHEF-IT**
 
-Chef-It is a desktop application designed to help users discover new recipes and restaurants based on their personal preferences. The application was built using Python, Kivy, and MySQL, combining a graphical user interface with a relational database to create a complete end to end food discovery experience.
+Chef-It
 
-Overview:
-The idea behind Chef-It is simple: Chef-It allows users to filter recipes and restaurants based on the factors that matter most to them and then returns relevant results from a locally stored database. It is difficult to make decisions regarding dinning due to varies and a plethora of preferences and Chef-It helps simplify this process.
-The application contains two main discovery modes: Recipe Discovery and Restaurant Discovery.
+Chef-It is a desktop application designed to help users discover new recipes and restaurants based on their personal preferences. Built using Python, Kivy, and MySQL, the project combines a graphical user interface, backend application logic, and a relational database into a complete end to end food discovery application.
 
-1. Recipe Discovery:
-The recipe section allows users to search through a database of 180+ dishes, with more added every month, using filters such as cuisine, difficulty level, and nutritional value.
-Once a suitable recipe is found, the application displays the relevant information, including the complete ingredient list and step by step cooking instructions allowing users to go from discovering a recipe to actually preparing it seamlessly.
+Overview
 
-2. Restaurant Discovery:
-The restaurant section works in a similar way, allowing users to discover restaurants from a database of 200+ entries.
-Users can filter restaurants based on cuisine, price range, and ambience. The results provide useful information such as the restaurant's specialty cuisine, rating, and location, helping users narrow down their options based on what they are looking for.
+Choosing what to cook or where to eat can often become repetitive, especially when users have specific preferences. Chef-It addresses this by allowing users to filter recipes and restaurants according to the factors that matter most to them and receive relevant results from a locally stored database.
 
-Search System:
-One of the features of Chef-It is its fallback search system. The application first attempts to find an exact match based on the filters selected by the user.
-If no exact results are found, Chef-It automatically performs a more flexible SQL LIKE based search. This means that the application can still return potentially relevant results instead of simply displaying an empty result when the user's preferences do not perfectly match the available data.
-The SQL queries are also built dynamically. Filters that the user does not select are excluded from the WHERE clause, allowing the same search system to handle different combinations of preferences.
+The application is divided into two main discovery modes: Recipe Discovery and Restaurant Discovery.
 
-Application Structure:
-The user interface is built entirely using Kivy. It manages the different screens within the application, including the introduction screen, mode selection, recipe discovery, and restaurant discovery.
-Kivy popups are also used for the filter forms, allowing users to enter their preferences before performing a search.
-MySQL acts as the application's database layer, storing the recipe and restaurant datasets and allowing the application to retrieve relevant records dynamically.
-Python connects the different components together. It handles the database connection, constructs the SQL queries, manages the primary and fallback search logic, and dynamically creates the Kivy widgets used to display results.
+Recipe Discovery
 
-Tech Stack:
+The recipe discovery system allows users to search through a database containing 180+ dishes using filters such as cuisine, difficulty level, and nutritional value.
+
+Once a suitable recipe is found, Chef-It displays the relevant information, including the ingredients required and detailed step by step cooking instructions. This allows users to quickly discover recipes that match their preferences and have all the information needed to prepare them.
+
+Restaurant Discovery
+
+The restaurant discovery system provides a similar experience for finding places to eat. Users can search through a database containing 180+ restaurants and filter results according to cuisine, price range, and ambience.
+
+Each result provides key information such as the restaurant's specialty cuisine, price range, rating, delivery availability, and location, allowing users to compare options based on their preferences.
+
+Search System
+
+Chef-It uses a dynamic search system to make the filtering process more flexible.
+
+The application first attempts to find results that directly match the filters selected by the user. If no exact matches are found, Chef-It automatically falls back to a more flexible SQL LIKE based search, allowing similar results to be returned instead of leaving the user with an empty result.
+
+The SQL queries are also generated dynamically. Filters that the user leaves unset are excluded from the WHERE clause, meaning users can search using any combination of available preferences without requiring every filter to be selected.
+
+Application Structure
+
+The frontend is built using Kivy, which handles the application's screens, navigation, input forms, popups, and dynamic result displays.
+
+MySQL provides the database layer and stores the recipe and restaurant datasets. The application retrieves information dynamically based on the user's selected filters.
+
+Python connects the different parts of the system together. It handles the database connection, query construction, search and fallback logic, application state, and communication between the frontend and supporting application files.
+
+Tech Stack
+
 Python
-Core application logic, database queries, search functionality, and application flow.
+Used for the core application logic, database integration, SQL query construction, search functionality, and communication between application components.
 
 Kivy
-Desktop graphical user interface, screen management, popups, and dynamic result rendering.
+Used to design the desktop interface, manage screens and views, handle user input, and dynamically display search results.
 
 MySQL
-Storage and retrieval of the recipe and restaurant datasets.
+Used to store and manage the recipe and restaurant datasets and provide the application with dynamically queried results.
 
-My Role:
-Chef-It was developed as part of a team of two, where I was responsible for the majority of the application's technical implementation. My work focused on the Python and database integration, including developing the database query logic, managing and entering database records, and connecting the application to MySQL.
-I also designed and implemented the application frontend and views using Kivy, including the different screens, user input forms, and dynamic result displays. In addition, I developed the Python integration code for the supporting subpart files, ensuring that the different components of the application worked together correctly and communicated with the database as intended.
+Our Roles
 
+Chef-It was developed as a team project of two, with Aryaman Banerjee and Aditya Jain contributing different parts of the application to build the complete system.
 
-Running Locally:
-To run Chef-It locally, first install the required Python dependencies:
+Aryaman Banerjee
+
+Focused primarily on the application's Python, database, and frontend integration. Responsibilities included developing the integrated database query logic, managing and entering database records, designing the Kivy frontend and views, and developing the Python code responsible for connecting the different supporting application files.
+
+I also worked on the application's search and filtering behaviour, including dynamically constructing database queries based on the user's selected preferences and implementing the fallback search logic when exact matches were unavailable.
+
+Aditya Jain
+
+Focused on supporting the application's application structure, functionality, and overall user experience. Responsibilities included contributing to the organisation and implementation of application components, supporting the recipe and restaurant discovery workflows, and helping refine the interaction between user inputs, search results, and the application's different screens.
+
+Aditya also contributed to testing and debugging the application, helping ensure that the different components worked together reliably and that the overall discovery experience remained clear and intuitive.
+
+Running Locally
+
+Install the required Python dependencies using:
+
 python -m pip install "kivy[base]"
-and 
-import msql.connector
-Next, set up a local MySQL database using the schema expected by main.py. The database contains a Restaurants table and a recipes table (code for all of the table attributes and values have been attached in another corresponding file within this repository). The expected column names can be found in the query result mapping code within main.py.
+python -m pip install mysql-connector-python
 
-For security, the database password should be stored as an environment variable rather than directly inside the source code.
+The project uses Kivy for the desktop application interface and MySQL Connector/Python to connect the Python application to the MySQL database.
 
-export DB_PASSWORD="your_password_here"
-
-Once the database has been configured, start the application with:
+Once the required packages have been installed, run the application using:
 
 python main.py
+Database Setup
+
+Chef-It uses MySQL to store its restaurant and recipe data.
+
+The database setup and restaurant seed data are provided in:
+
+database/chef_it_database.sql
+
+The SQL script creates the ChefIt database, creates the Restaurant table, and populates it with the project's restaurant data.
+
+Open the SQL file in MySQL Workbench or another MySQL client and execute the script before running the application.
+
+The recipe database follows the corresponding schema expected by the application code.
+
+Project Structure
+
+A typical project structure is:
+
+Chef-It/
+│
+├── main.py
+├── requirements.txt
+├── README.md
+│
+├── database/
+│   └── chef_it_database.sql
+│
+└── ...
 Project Background
 
-Chef-It was one of my early hands on projects where I built an application from the ground up rather than following a tutorial. It gave me practical experience connecting a graphical interface, backend application logic, and a real relational database into one working system.
+Chef-It was an early hands on project focused on building a complete application from the ground up rather than following a tutorial. It provided practical experience working across the different layers of a software system, from designing a user interface and managing application state to constructing SQL queries and integrating a real relational database.
 
-More importantly, it helped me understand how the different layers of a software application work together, from designing and querying a database to managing application state and dynamically generating the user interface.
+The project helped develop a stronger understanding of how frontend design, backend logic, database management, and application integration work together to create a functional software product.
 
-The project is also part of what sparked my continued interest in software development and applied problem solving alongside my engineering degree.
+It also represents an early step toward exploring software development and applied problem solving alongside an engineering degree.
 
+Database Schema
+
+The database setup scripts are provided in the database directory. The chef_it_database.sql file contains the SQL required to create the Chef-It database, create the Restaurant table, and populate it with the project's restaurant records.
+
+Additional SQL schema and setup scripts for the recipe dataset can be added to the same directory as the database structure is finalised.
