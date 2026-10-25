@@ -16,8 +16,8 @@ The application is divided into two main discovery modes:<br>
 **3. Complete Stack Integration:** Combines a Kivy graphical user interface, a Python backend logic layer and a MySQL relational database.<br>
 <br>
 **TECH STACK**<br>
-**Python:** Core application logic, database integration, SQL query construction, and component communication.<br>
-**Kivy:** Desktop interface design, screen and view management, user input handling, and dynamic result rendering.<br>
+**Python:** Core application logic, database integration, SQL query construction and component communication.<br>
+**Kivy:** Desktop interface design, screen and view management, user input handling and dynamic result rendering.<br>
 **MySQL:** Storage and management of restaurant and recipe datasets.<br>
 <br>
 **Authors & Contributors**<br>
