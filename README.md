@@ -13,7 +13,7 @@ The application is divided into two main discovery modes:<br>
 
 **1. Dynamic Search System:** Automatically falls back to a flexible SQL LIKE-based search if no exact filter matches are found, ensuring you are never left with an empty result screen.<br>
 **2. Flexible Query Construction:** Unset filters are automatically excluded from the WHERE clause, allowing you to search using any combination of preferences.<br>
-**3. Complete Stack Integration:** Combines a Kivy graphical user interface, a Python backend logic layer, and a MySQL relational database.<br>
+**3. Complete Stack Integration:** Combines a Kivy graphical user interface, a Python backend logic layer and a MySQL relational database.<br>
 <br>
 **TECH STACK**<br>
 **Python:** Core application logic, database integration, SQL query construction, and component communication.<br>
