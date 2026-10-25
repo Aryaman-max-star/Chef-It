@@ -20,7 +20,7 @@ The application is divided into two main discovery modes:<br>
 **Kivy:** Desktop interface design, screen and view management, user input handling and dynamic result rendering.<br>
 **MySQL:** Storage and management of restaurant and recipe datasets.<br>
 <br>
-**Authors & Contributors**<br>
+**Authors**<br>
 
 Developed as a team project by:<br>
 **Aryaman Banerjee** – Focused on Python backend, database design, record entry, Kivy frontend views and search query fallback logic.<br>
