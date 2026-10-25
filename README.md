@@ -2,7 +2,7 @@
 A desktop application designed to help users discover new recipes and restaurants based on their personal preferences, built using Python, Kivy, and MySQL.<br>
 <br>
 **OVERVIEW**<br>
-Choosing what to cook or where to eat often becomes repetitive, especially for users with specific dietary, cost or cuisine preferences. Chef-It solves this with a multi-criteria filtering system. Users set the parameters that matter most to them, and the application queries a locally stored database to return only the recipes and restaurants that match.<br>
+Choosing what to cook or where to eat often becomes quite repetitive, especially for users with specific dietary, cost or cuisine preferences. Chef-It solves this with a multi-criteria filtering system. Users set the parameters that matter most to them, and the application queries a locally stored database to return only the recipes and restaurants that match.<br>
 <br>
 The application is divided into two main discovery modes:<br>
 
