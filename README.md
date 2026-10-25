@@ -6,7 +6,7 @@ Choosing what to cook or where to eat often becomes repetitive, especially for u
 <br>
 The application is divided into two main discovery modes:<br>
 
-**1. Recipe Discovery:** Search through a database containing 180+ dishes using filters like cuisine, difficulty level, and nutritional value to view required ingredients and step-by-step instructions.<br>
+**1. Recipe Discovery:** Search through a database containing 200+ dishes using filters like cuisine, difficulty level, and nutritional value to view required ingredients and step-by-step instructions.<br>
 **2. Restaurant Discovery:** Filter through 180+ restaurants by cuisine, price range, ambience, ratings, delivery availability, and location.<br>
 <br>
 **KEY FEATURES**<br>
