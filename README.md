@@ -23,5 +23,5 @@ The application is divided into two main discovery modes:<br>
 **Authors & Contributors**<br>
 
 Developed as a team project by:<br>
-**Aryaman Banerjee** – Focused on Python backend, database design, record entry, Kivy frontend views, and search query fallback logic.<br>
-**Vir Chanda** – Focused on designing application structure, user experience workflows, component integration, testing, and debugging.
+**Aryaman Banerjee** – Focused on Python backend, database design, record entry, Kivy frontend views and search query fallback logic.<br>
+**Vir Chanda** – Focused on designing application structure, user experience workflows, component integration, testing and debugging.
